@@ -1,6 +1,9 @@
-(function (window) {
-	'use strict';
+require('todomvc-common/base.css');
+require('todomvc-app-css/index.css');
+// require('todomvc-common/base');
 
-	// Your starting point. Enjoy the ride!
+require('../css/app.css');
 
-})(window);
+var kt = require('todomvc');
+kt.com.minek.kotlin.everywhere.todomvc.main(['#app']);
+
