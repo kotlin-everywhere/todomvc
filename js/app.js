@@ -5,5 +5,5 @@ require('todomvc-app-css/index.css');
 require('../css/app.css');
 
 var kt = require('todomvc');
-kt.com.minek.kotlin.everywhere.todomvc.main(['#app']);
+kt.com.minek.kotlin.everywhere.todomvc.main(document.querySelector('#app'));
 
