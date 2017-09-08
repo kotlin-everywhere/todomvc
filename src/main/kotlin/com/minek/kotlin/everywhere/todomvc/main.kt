@@ -1,5 +1,6 @@
 package com.minek.kotlin.everywhere.todomvc
 
+import com.minek.kotlin.everywhere.keuix.browser.Program
 import com.minek.kotlin.everywhere.keuix.browser.html.Html
 import com.minek.kotlin.everywhere.keuix.browser.runBeginnerProgram
 import org.w3c.dom.Element
@@ -17,6 +18,6 @@ fun view(model: Model): Html<Msg> {
 
 @Suppress("unused")
 @JsName("main")
-fun main(container: Element) {
-    runBeginnerProgram(container, Model(), ::update, ::view)
+fun main(container: Element, model: Model?): Program<Model, Msg> {
+    return runBeginnerProgram(container, model ?: Model(), ::update, ::view)
 }
