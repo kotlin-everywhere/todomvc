@@ -9,3 +9,7 @@ var app = document.querySelector('#app');
 var root = document.createElement('div');
 app.appendChild(root);
 kt.com.minek.kotlin.everywhere.todomvc.main(root);
+
+setTimeout(function () {
+    document.body.style.visibility = "visible";
+}, 1);
