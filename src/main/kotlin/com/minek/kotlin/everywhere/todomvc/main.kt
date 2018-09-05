@@ -2,9 +2,12 @@ package com.minek.kotlin.everywhere.todomvc
 
 import com.minek.kotlin.everywhere.keduct.bluebird.Bluebird
 import com.minek.kotlin.everywhere.keduct.uuid.Uuid
-import com.minek.kotlin.everywhere.keuix.browser.*
+import com.minek.kotlin.everywhere.keuix.browser.Cmd
+import com.minek.kotlin.everywhere.keuix.browser.Update
+import com.minek.kotlin.everywhere.keuix.browser.View
 import com.minek.kotlin.everywhere.keuix.browser.html.*
 import com.minek.kotlin.everywhere.keuix.browser.html.Html.Companion.section
+import com.minek.kotlin.everywhere.keuix.browser.runProgramDebugger
 import com.minek.kotlin.everywhere.todomvc.Filter.*
 import com.minek.kotlin.everywhere.todomvc.Msg.*
 import org.w3c.dom.Element
@@ -148,8 +151,8 @@ val view: View<Model, Msg> = { model ->
 
 @Suppress("unused")
 @JsName("main")
-fun main(container: Element): Program<Model, Msg> {
-    return runProgram(container, Model(), update, view)
+fun main(container: Element) {
+    runProgramDebugger(container, Model(), update, view)
 }
 
 fun <T : Any> generateUuid(tagger: (Uuid) -> T): Cmd<T> {
