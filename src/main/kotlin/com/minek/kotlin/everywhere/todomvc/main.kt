@@ -45,20 +45,20 @@ val Todo.editElementId: String
 data class Editing(val id: Uuid, val message: String = "")
 
 sealed class Msg {
-    class SetNewTodoMessage(val message: String) : Msg()
-    class SetFilter(val filter: Filter) : Msg()
-    class SetCompleted(val completed: Boolean) : Msg()
+    data class SetNewTodoMessage(val message: String) : Msg()
+    data class SetFilter(val filter: Filter) : Msg()
+    data class SetCompleted(val completed: Boolean) : Msg()
     object ClearCompleted : Msg()
 
     object AddTodo : Msg()
-    class NewUuid(val uuid: Uuid) : Msg()
+    data class NewUuid(val uuid: Uuid) : Msg()
 
-    class SetTodoCompleted(val id: Uuid, val completed: Boolean) : Msg()
-    class StartEditTodo(val id: Uuid) : Msg()
-    class SetEditTodoMessage(val id: Uuid, val message: String) : Msg()
-    class CommitEditTodo(val id: Uuid) : Msg()
-    class CancelEditTodo(val id: Uuid) : Msg()
-    class DeleteTodo(val id: Uuid) : Msg()
+    data class SetTodoCompleted(val id: Uuid, val completed: Boolean) : Msg()
+    data class StartEditTodo(val id: Uuid) : Msg()
+    data class SetEditTodoMessage(val id: Uuid, val message: String) : Msg()
+    data class CommitEditTodo(val id: Uuid) : Msg()
+    data class CancelEditTodo(val id: Uuid) : Msg()
+    data class DeleteTodo(val id: Uuid) : Msg()
 }
 
 val update: Update<Model, Msg> = { msg, model ->
